@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //鄙视题: 将字符串中每个单词首字母转为大写
+        var str="you can you up";
+        var str=str.replace(/\b[a-z]/ig,function(n){
+            //打桩可以让回调函数执行过程现原形！
+            console.log(`调用了一次回调函数，形参=${n},返回值：${n.toUpperCase()}`);
+            //形参: 4种可能: y c y u
+            //返回: 也4种可能Y C Y U
+            return n.toUpperCase();
+        });
+        console.log(str);
+    </script>
+</body>
+</html>
